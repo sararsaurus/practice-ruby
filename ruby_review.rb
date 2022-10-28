@@ -56,4 +56,12 @@ banking_info = [["Marco", "Polo", "mpolo@gmail.com"], ["Ibn", "Battuta,", "ib@gm
 fields = [:first_name, :last_name, :email]
 
 array_of_hashes = banking_info.map { |row| fields.zip(row).to_h }
+# p array_of_hashes
+
+account_number = rand(10 ** 10)
+# p account_number
+
+array_of_hashes.each do |hash|
+  hash[:account_number] = rand(10 ** 10)
+end
 p array_of_hashes
