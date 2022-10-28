@@ -53,18 +53,7 @@
 # end
 banking_info = [["Marco", "Polo", "mpolo@gmail.com"], ["Ibn", "Battuta,", "ib@gmail.com"], ["Leif", "Erikson", "le@gmail.com"], ["Amelia", "Earhart", "ae@gmail.com"], ["Gertrude", "Bell", "gb@gmail.com"]]
 
-data_hash = {}
-array_of_hashes = []
-index = 0
-while index < banking_info.length
-  first_name = banking_info[index][0]
-  last_name = banking_info[index][1]
-  email = banking_info[index][2]
+fields = [:first_name, :last_name, :email]
 
-  data_hash[:first_name] = first_name
-  data_hash[:last_name] = last_name
-  data_hash[:email] = email
-  # p data_hash
-  index += 1
-end
-# but my hashes just rewrite each other
+array_of_hashes = banking_info.map { |row| fields.zip(row).to_h }
+p array_of_hashes
